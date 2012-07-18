@@ -34,7 +34,7 @@ class ApiController extends Zend_Controller_Action
         
         // lets get our info from the DB
         $dbtable_blocks = new Application_Model_DbTable_Blocks();
-        $arr_results_block = $dbtable_blocks->fetchAll("`endIpNum` >= $int_ipnum", "endIpNum DESC", 1);
+        $arr_results_block = $dbtable_blocks->fetchAll("`endIpNum` >= $int_ipnum", "endIpNum ASC", 1);
 
         if (count($arr_results_block) != 1)
         {
