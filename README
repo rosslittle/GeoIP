@@ -4,3 +4,6 @@ http://www.maxmind.com/app/geolite
 
 The database structure is held in the docs table - it is pretty obvious which columns map to those in MaxMind's csv files.
 
+The single API point is at /api/request/api/w.x.y.z where w.x.y.w is an IPv4 address. There is simple validation on this parameter and results are performed in json.
+Return json array contains an 'outcome' that can be one of success, not found, or validation error.
+

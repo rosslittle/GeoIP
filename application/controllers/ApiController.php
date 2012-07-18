@@ -20,7 +20,6 @@ class ApiController extends Zend_Controller_Action
         $zend_validate_ip = new Zend_Validate_Ip();
         if (is_null($str_ip) || !($zend_validate_ip->isValid($str_ip)))
         {
-            die('Requested params null or not available');
             $arr_data = array(
                 'outcome'       => 'failed',
                 'reason'        => 'validation error'
