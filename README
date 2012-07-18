@@ -1,0 +1,6 @@
+This is a very simple web service for the MaxMind GeoIP database held at:
+
+http://www.maxmind.com/app/geolite
+
+The database structure is held in the docs table - it is pretty obvious which columns map to those in MaxMind's csv files.
+
