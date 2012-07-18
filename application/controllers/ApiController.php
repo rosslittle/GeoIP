@@ -34,7 +34,7 @@ class ApiController extends Zend_Controller_Action
         
         // lets get our info from the DB
         $dbtable_blocks = new Application_Model_DbTable_Blocks();
-        $arr_results_block = $dbtable_blocks->fetchRow("`startIpNum` < $int_ipnum AND `endIpNum` > $int_ipnum");
+        $arr_results_block = $dbtable_blocks->fetchAll("`endIpNum` >= $int_ipnum", "endIpNum DESC", 1);
 
         if (count($arr_results_block) != 1)
         {
@@ -44,6 +44,11 @@ class ApiController extends Zend_Controller_Action
             );
             $this->_helper->json($arr_data);
             return;
+        }
+        else
+        {
+            $arr_results_block = $arr_results_block->toArray();
+            $arr_results_block = $arr_results_block[0];
         }
         
         $dbtable_locations = new Application_Model_DbTable_Locations();
